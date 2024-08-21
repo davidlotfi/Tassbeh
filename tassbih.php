@@ -2,7 +2,6 @@
   <?php include('include/header.php'); ?>
 
   <main id="main" class="main" style="background-color: #FDF6E3;">
-
     <div class="pagetitle">
       <h1 class="text-success">Tassbih 1</h1>
     </div><!-- End Page Title -->
@@ -60,7 +59,6 @@
                         <!-- End Table Variants --> 
                     </div>
                   </div>
-
                   <div class="card">
                     <div class="card-body">
                       <!-- Vertical Form -->
@@ -68,14 +66,14 @@
                         <div class="col-2">
                           <button type="submit" name="commit" class="btn btn-success">Save</button>
                         </div>
+                        <div class="col-2"><?php if(isset($_POST['commit'])) {echo $dikhr;}?></div> 
+                        <div class="col-2"><?php if(isset($_POST['commit'])) {echo $i;}?></div>           
                       </form><!-- Vertical Form -->
                     </div>
                   </div>
-
         </div><!-- End Left side columns -->
       </div>
     </section>
-
   </main><!-- End #main -->
 
   <?php include('include/footer.php'); ?>

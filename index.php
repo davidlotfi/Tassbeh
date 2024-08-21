@@ -1,9 +1,11 @@
-
-
+  <?php require_once('config/database.php'); ?>
+  <?php  
+    $reponse=$dbd->query('select * from dikhr where id=1'); 
+    $donnees=$reponse->fetch();
+  ?>
   <?php include('include/header.php'); ?>
 
   <main id="main" class="main" style="background-color: #FDF6E3;">
-
     <div class="pagetitle">
       <h1 class="text-success">احصاء الذكر</h1>
     </div><!-- End Page Title -->
@@ -25,7 +27,7 @@
                       <img src="images/img1.jpg" class="img-thumbnail" alt="">
                     </div>
                     <div class="ps-3">
-                      <h6>1500</h6>
+                      <h6><?php echo $donnees['nombre']; ?></h6>
                     </div>
                   </div>
                 </div>
