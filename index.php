@@ -1,7 +1,7 @@
   <?php require_once('config/database.php'); ?>
-  <?php  
-    $reponse=$dbd->query('select * from dikhr where id=1'); 
-    $donnees=$reponse->fetch();
+  <?php
+    $reponse=$dbd->query('select sum(nombre) as somme from dikhr');
+    $result=$reponse->fetch();
   ?>
   <?php include('include/header.php'); ?>
 
@@ -27,7 +27,7 @@
                       <img src="images/img1.jpg" class="img-thumbnail" alt="">
                     </div>
                     <div class="ps-3">
-                      <h6><?php echo $donnees['nombre']; ?></h6>
+                      <h6><?php echo $result['somme']; ?></h6>
                     </div>
                   </div>
                 </div>
@@ -105,9 +105,7 @@
                       </tr>
                     </tbody>
                   </table>
-
                 </div>
-
               </div>
             </div><!-- End Top Selling -->
 

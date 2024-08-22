@@ -1,4 +1,4 @@
-
+  <?php require_once('config/database.php'); ?>
   <?php include('include/header.php'); ?>
 
   <main id="main" class="main" style="background-color: #FDF6E3;">
@@ -56,19 +56,22 @@
                             <?php }} ?>
                           </tbody>
                         </table>
-                        <!-- End Table Variants --> 
+                        <!-- End Table Variants -->
                     </div>
                   </div>
                   <div class="card">
                     <div class="card-body">
                       <!-- Vertical Form -->
                       <form class="row pt-4" action="tassbih.php" method="post">
-                        <div class="col-2">
-                          <button type="submit" name="commit" class="btn btn-success">Save</button>
-                        </div>
-                        <div class="col-2"><?php if(isset($_POST['commit'])) {echo $dikhr;}?></div> 
-                        <div class="col-2"><?php if(isset($_POST['commit'])) {echo $i;}?></div>           
+                      <div class="col-2"><button type="submit" name="insert" class="btn btn-success">save</button></div>
+                        <div class="col-5"><?php if(isset($_POST['commit'])) {echo $dikhr;}?></div>
+                        <div class="col-2"><input type="text" class="form-control" name="nbr" value="<?php if(isset($_POST['commit'])) {echo $i-1;}?>"></div>
                       </form><!-- Vertical Form -->
+                      <?php if(isset($_POST['insert'])) {
+                        $nbr = $_POST['nbr'];
+                        $req=$dbd->prepare('INSERT INTO dikhr(nombre) VALUES(?)');
+                        $req->execute(array($nbr));
+                        ;}?>
                     </div>
                   </div>
         </div><!-- End Left side columns -->
