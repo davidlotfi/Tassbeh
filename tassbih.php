@@ -3,7 +3,8 @@
 
   <main id="main" class="main" style="background-color: #FDF6E3;">
     <div class="pagetitle">
-      <h1 class="text-success">Tassbih 1</h1>
+
+      <h1 class="text-success"><img src="icon/moon.png" alt=""> الا بذكر الله تطمئن القلوب</h1>
     </div><!-- End Page Title -->
     <section class="section dashboard">
         <!-- Left side columns -->

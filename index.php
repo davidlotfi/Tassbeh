@@ -7,7 +7,7 @@
 
   <main id="main" class="main" style="background-color: #FDF6E3;">
     <div class="pagetitle">
-      <h1 class="text-success">احصاء الذكر</h1>
+      <img src="icon/quran2.png" alt="">
     </div><!-- End Page Title -->
 
     <section class="section dashboard">

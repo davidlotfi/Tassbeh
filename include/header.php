@@ -6,8 +6,8 @@
     <meta content="" name="description">
     <meta content="" name="keywords">
     <!-- Favicons -->
-    <link href="assets/img/favicon.png" rel="icon">
-    <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+    <link href="icon/lantern.png" rel="icon">
+    <link href="icon/kaaba.png" rel="apple-touch-icon">
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
@@ -18,7 +18,7 @@
   <header id="header" class="header fixed-top d-flex align-items-center">
     <div class="d-flex align-items-center justify-content-between">
       <a href="index.html" class="logo d-flex align-items-center">
-        <img src="assets/img/logo.png" alt="">
+        <img src="icon/kaaba.png" alt="">
         <span class="d-none d-lg-block">Tasbeeh</span>
       </a>
       <i class="bi bi-list toggle-sidebar-btn"></i>
