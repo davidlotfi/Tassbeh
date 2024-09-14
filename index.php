@@ -44,7 +44,7 @@
                       <img src="images/img3.jpeg" class="img-thumbnail" alt="">
                     </div>
                     <div class="ps-3">
-                      <h6>12000</h6>
+                      <h6>00</h6>
                     </div>
                   </div>
                 </div>
@@ -61,7 +61,7 @@
                       <img src="images/img4.jpeg" class="img-thumbnail" alt="">
                     </div>
                     <div class="ps-3">
-                      <h6>12445</h6>
+                      <h6>00</h6>
                     </div>
                   </div>
                 </div>

@@ -1,5 +1,6 @@
   <?php require_once('config/database.php'); ?>
   <?php include('include/header.php'); ?>
+  <?php $result=find_all(); ?>
 
   <main id="main" class="main" style="background-color: #FDF6E3;">
     <div class="pagetitle">
@@ -16,11 +17,10 @@
                       <form class="row pt-4" action="tassbih.php" method="post">
                         <div class="col-5">
                           <select class="form-select" name="dikhr">
-                            <option selected>اختيار الذكر---</option>
-                            <option value="استغفر الله">استغفر الله</option>
-                            <option value=" الحمد لله">الحمد لله</option>
-                            <option value="لَا إِلَهَ إِلَّا اللَّهُ وَحْدَه">لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ</option>
-                            <option value="لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ">لَا إِلَهَ إِلَّا اللَّهُ وَحْدَهُ لَا شَرِيكَ لَهُ لَهُ الْمُلْكُ وَلَهُ الْحَمْدُ وَهُوَ عَلَى كُلِّ شَيْءٍ قَدِيرٌ</option>
+                            <option selected>اختيار الذكر ---</option>
+                            <?php while ($tassbih=$result->fetch()){?>
+                              <option value="<?php echo $tassbih['nom']; ?>"><?php echo $tassbih['nom']; ?></option>
+                            <?php } $result->closeCursor(); ?>
                           </select>
                         </div>
                         <div class="col-5">
@@ -65,13 +65,14 @@
                       <!-- Vertical Form -->
                       <form class="row pt-4" action="tassbih.php" method="post">
                       <div class="col-2"><button type="submit" name="insert" class="btn btn-success">save</button></div>
-                        <div class="col-5"><?php if(isset($_POST['commit'])) {echo $dikhr;}?></div>
+                        <div class="col-5"><input type="text" class="form-control" name="dik" value="<?php if(isset($_POST['commit'])) {echo $dikhr;}?>"></div>
                         <div class="col-2"><input type="text" class="form-control" name="nbr" value="<?php if(isset($_POST['commit'])) {echo $i-1;}?>"></div>
                       </form><!-- Vertical Form -->
                       <?php if(isset($_POST['insert'])) {
                         $nbr = $_POST['nbr'];
-                        $req=$dbd->prepare('INSERT INTO dikhr(nombre) VALUES(?)');
-                        $req->execute(array($nbr));
+                        $dik= $_POST['dik'];
+                        $req=$dbd->prepare('INSERT INTO dikhr(nombre,tassbih1) VALUES(?,?)');
+                        $req->execute(array($nbr,$dik));
                         ;}?>
                     </div>
                   </div>

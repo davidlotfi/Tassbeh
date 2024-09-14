@@ -6,13 +6,18 @@ defined('DBUSER') ? null : define('DBUSER','root');
 defined('DBPASS') ? null : define('DBPASS','');
 
   try {
-    
+
     $dbd = new PDO('mysql:host='.DBHOST.';dbname='.DBNAME,DBUSER,DBPASS);
 
   } catch (\Exception $e) {
 
     die($e->getmessage());
-    
+
+  }
+
+  function find_all(){
+    global $dbd;
+    return $dbd->query('select * from tassbeh');
   }
 
 ?>
